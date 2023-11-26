@@ -15,8 +15,10 @@ def print_string(param):
 
 @app.route('/count/<int:param>')
 def count(param):
-    numbers = '\n'.join(str(i) for i in range(param))
-    return f'Counting from 0 to {param}:\n{numbers}'
+    equals = ""
+    for num in range(param):
+        equals = equals + f'{num}\n'
+    return equals
 
 @app.route('/math/<int:num1>/<operation>/<int:num2>')
 def math(num1, operation, num2):
